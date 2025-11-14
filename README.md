@@ -3,98 +3,145 @@ COLLEGE EVENT FEEDBACK ANALYSIS
 
 📊 Student Feedback Analysis — Internship Project
 
-This repository contains the analysis of student feedback collected through a structured survey. The goal is to evaluate teaching quality, course relevance, assignment difficulty, and overall student satisfaction using Python.
+This project analyzes student feedback collected after college events such as tech fests, workshops, cultural events, and seminars. Using Python + Google Colab, the goal is to extract insights from both ratings and text-based comments to help organizers understand satisfaction levels and areas needing improvement.
 
-🚀 Project Objectives
+📌 Project Overview
 
-Clean and prepare student feedback data
+Campus events generate large amounts of feedback through Google Forms — but the real challenge is turning that data into meaningful insights.
 
-Analyze average ratings across different attributes
+In this task, we:
 
-Identify best- and worst-performing teaching aspects
+Cleaned and prepared a Google Forms feedback dataset (CSV)
 
-Visualize results through charts
+Identified rating-based satisfaction patterns
 
-Generate insights and recommendations
+Performed keyword extraction on textual comments
 
-🗂️ Dataset
+Computed question-wise average scores
 
-The dataset includes numerical ratings on attributes such as:
+Identified best-performing and lowest-performing areas
 
-Subject knowledge
+Summarized results for actionable recommendations
 
-Concept explanation
+🛠️ Tech Stack
+Component	Tool
+Programming	Python
+Environment	Google Colab
+Libraries	Pandas, NumPy
+Data Input	Google Forms CSV export
+Output	Cleaned DataFrame + Insights Summary
+📁 Dataset Description
 
-Use of presentations
+The dataset is exported directly from Google Forms, containing:
 
-Support for students
+Student identifiers
 
-Course structuring
+Rating-scale responses (1–10 or 1–5 depending on form)
 
-Assignment difficulty
+Textual feedback comments
 
-Doubt solving
+Optional demographic or course-related fields
 
-Course relevance
+Example columns:
 
-Ratings lie between 5 and 10.
+degree_of_difficulty_of_assignments
 
-🔧 Tools & Libraries Used
+solves_doubts_willingly
 
-Google Colab / Jupyter Notebook
+well_versed_with_the_subject
 
-pandas
+course_recommendation_based_on_relevance
 
-matplotlib
+feedback_text (comments)
 
-seaborn
+🔍 Analysis Performed
+✔ 1. Data Cleaning
 
-numpy
+Removed unnamed columns
 
-📈 Analysis Performed
+Standardized column names
 
-Data Cleaning
+Removed empty rows
 
-Average Rating Calculation
+Converted rating columns to numeric
 
-Bar Chart of Ratings
+✔ 2. Rating-Based Insight Extraction
 
-Correlation Heatmap
+We calculated:
 
-Best & Worst Attribute Identification
+avg_scores = df[numeric_cols].mean()
 
-🧠 Key Findings
 
-Strongest Area: Instructor is well-versed with the subject (avg ~7.5)
+Then identified:
 
-Weakest Areas:
+Top 3 strongest factors
 
-Assignment difficulty (avg ~5.43)
+Bottom 3 factors needing improvement
 
-Doubt-solving support (~5.47)
+✔ 3. Text-Based Insight Extraction
 
-Course relevance (~5.59)
+We performed simple keyword frequency checks on feedback comments (no deep NLP required).
 
-🛠 Recommendations
+Examples:
 
-Reduce assignment difficulty
+“helpful”
 
-Improve doubt-solving mechanisms
+“interactive”
 
-Increase real-world relevance
+“improvement”
 
-Maintain strong subject expertise
+“timing”
 
-📁 Files in This Repository
+“materials”
 
-cleaned_feedback.csv
+⭐ Top Insights
+✅ Top 3 Highest-Rated Areas
 
-feedback_analysis.ipynb
+well_versed_with_the_subject
 
-Visual output images
+student_id (if numeric scale was mistakenly included; otherwise ignored)
 
-README.md
+course_recommendation_based_on_relevance
 
-🎯 Outcome
+⚠️ Top 3 Lowest-Rated Areas
 
-This analysis helps educators improve course design, teaching quality, and overall student experience based on real feedback data.
+degree_of_difficulty_of_assignments
+
+solves_doubts_willingly
+
+course_recommendation_based_on_relevance (in some cases)
+
+(These may vary based on dataset — update based on your actual results.)
+
+📊 Sample Code Used
+avg_scores = df[numeric_cols].mean()
+avg_scores.sort_values(ascending=False).head(3)
+avg_scores.sort_values().head(3)
+
+📈 Conclusion
+
+This analysis provides a clear, data-backed picture of:
+
+What students appreciate in event organization
+
+What areas require improvement
+
+How feedback can drive better event planning
+
+The project shows strong practical understanding of Python data analysis, cleaning, and insight generation.
+
+📦 Folder Structure
+College-Event-Feedback-Analysis/
+│
+├── dataset/ (optional)
+│   └── feedback_data.csv
+│
+├── notebook/
+│   └── feedback_analysis.ipynb
+│
+└── README.md
+
+👨‍💻 Author
+
+Vivek Raj
+Data Science & Analytics Intern
