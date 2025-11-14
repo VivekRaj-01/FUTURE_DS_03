@@ -55,6 +55,7 @@ course_recommendation_based_on_relevance
 feedback_text (comments)
 
 🔍 Analysis Performed
+
 ✔ 1. Data Cleaning
 
 Removed unnamed columns
@@ -95,6 +96,7 @@ Examples:
 “materials”
 
 ⭐ Top Insights
+
 ✅ Top 3 Highest-Rated Areas
 
 well_versed_with_the_subject
@@ -140,6 +142,7 @@ College-Event-Feedback-Analysis/
 │   └── feedback_analysis.ipynb
 │
 └── README.md
+
 
 👨‍💻 Author
 
